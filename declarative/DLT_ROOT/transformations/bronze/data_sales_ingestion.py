@@ -10,7 +10,7 @@ dlt.create_streaming_table(comment="This table contains the raw data from the br
 
 @dlt.append_flow(target="sales_stg")
 def east_sales():
-    df=spark.readStream.table('dlt_catalog.source.sales_east')
+    df=spark.readStream.table('dlt_catalog.source.sales_east') # this source can be anything but here we make the source by query for learning
     return df
 
 @dlt.append_flow(target="sales_stg")

@@ -11,6 +11,6 @@ dlt.create_streaming_table(
 
 @dlt.append_flow(target="product_stg")
 def load_product():
-        df= spark.readStream.table('dlt_catalog.source.products')
+        df= spark.readStream.table('dlt_catalog.source.products') # read new data cause it is delta table as soon change made to table stream it to the prodcut_Stg
         return df
     
